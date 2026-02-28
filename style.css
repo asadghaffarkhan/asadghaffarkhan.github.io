@@ -1,0 +1,285 @@
+/* =========================================
+   1. GLOBAL STYLES (Resets and Defaults)
+   ========================================= */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #050505; /* Deep black background */
+    color: #ffffff; /* Default text color (white) */
+}
+
+
+
+/* =========================================
+   2. HEADER & NAVIGATION (Top Bar)
+   ========================================= */
+
+
+
+.main-header {
+    background: linear-gradient(90deg, #6b21a8, #0ea5e9); 
+
+/* Purple to blue top bar */
+
+    padding: 15px 0 10px 0;
+    text-align: center;
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+
+/* Space between your name and small pic */
+}
+
+.name-container h1 {
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+
+    /* This creates the heavy black outline for the text */
+
+    text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Small profile picture in the header */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Makes it a circle */
+    border: 1px solid navy; 
+
+/* Your navy blue border */
+
+    object-fit: cover; /* Prevents the image from stretching */
+}
+
+/* Navigation Menu Styling */
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 35px; /* Spacing between links */
+    padding: 15px 0;
+    background-color: #0a0a0a; /* Slightly darker than body for depth */
+    border-bottom: 1px solid #222222; /* Clean separator line */
+    margin-top: 0;
+}
+
+.nav-links a {
+    color: #a0a0a0; /* Professional light grey */
+    text-decoration: none; 
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+/* Adds your blue-green color when tapped */
+.nav-links a:active {
+    color: #00b4d8; 
+}
+
+
+
+/* =========================================
+   3. WELCOME SECTION (Wavy Graphic)
+   ========================================= */
+.welcome-section {
+    text-align: center;
+    padding: 20px 15px;
+}
+
+.wave-container {
+    position: relative;
+    padding: 50px 0;
+    margin-bottom: 5px;
+    z-index: 1;
+}
+
+/* This creates the purple/blue abstract blob behind "Welcome to AGK's" */
+
+
+.wave-container::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 120px;
+    background: linear-gradient(45deg, #4a148c, #1e88e5);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.wave-container h2 {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+
+
+/* =========================================
+   4. LARGE FEATURED PHOTO STYLING
+   ========================================= */
+.featured-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.featured-pic {
+    width: 250px; /* Size of the large center photo */
+
+    height: auto;
+    border-radius: 20px; /* Modern rounded corners */
+    border: 4px solid #6b21a8; /* Purple border to match the theme */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6); /* Drop shadow for depth */
+}
+
+/* Bio text located below the large photo */
+.bio {
+    padding: 0 30px;
+    margin-top: 20px;
+    font-size: 15px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* =========================================
+   5. SOCIAL HANDLES (Icons and Names)
+   ========================================= */
+.social-handles {
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.social-item i {
+    font-size: 18px; 
+/* Size of the social media icons */
+    width: 25px;
+    text-align: center;
+}
+
+/* Specialized glow effect for the TikTok icon */
+.tiktok-icon i {
+    color: white !important;
+    text-shadow: 2px 0px 0px #fd3e3e, -2px 0px 0px #4de8f4;
+}
+
+/* =========================================
+   6. PRODUCTS SECTION (Scrolling Buttons)
+   ========================================= */
+.products-section {
+    padding: 20px 40px;
+}
+
+.note {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.product-scroll-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding-bottom: 15px;
+    white-space: nowrap;
+}
+
+/* Hides the horizontal scrollbar for a cleaner mobile look */
+.product-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.product-btn {
+    padding: 12px 25px;
+    background: #111;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevents the button from squishing */
+}
+
+/* =========================================
+   7. FOOTER (Contact Area)
+   ========================================= */
+.contact-footer {
+    background: linear-gradient(90deg, #6b21a8, #0ea5e9);
+    padding: 25px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.contact-footer p {
+    color: white;
+    font-size: 16px;
+}
+
+.contact-footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Make social links smaller and centered */
+.social-item {
+    background-color: #111111; 
+    padding: 8px 20px; /* Decreased padding makes them smaller */
+    border-radius: 30px; 
+    border: 1px solid #333333; 
+    margin-bottom: 12px; 
+    transition: all 0.2s ease;
+    width: fit-content; /* Prevents stretching */
+    margin-left: auto; /* Centers the button */
+    margin-right: auto; /* Centers the button */
+}
+
+/* Add a push-down effect when tapped */
+.social-item:active {
+    transform: scale(0.95);
+    background-color: #222222;
+}
+
+/* Change text to a clickable blue-green color */
+.social-item span {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: #00b4d8; /* Clickable blue-green color */
+    font-size: 14px; /* Slightly smaller text */
+}
+
